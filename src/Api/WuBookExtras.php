@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace IlGala\LaravelWubook\Api;
+namespace jonmadval\LaravelWubook\Api;
 
-use IlGala\LaravelWubook\Api\WuBookApi;
+use jonmadval\LaravelWubook\Api\WuBookApi;
 
 /**
  * Description of WuBookExtras
