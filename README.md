@@ -1,7 +1,9 @@
 # Laravel WuBook
 
-
+This version of Laravel Wubook was modified by [Jonathan Madrid](http://github.com/jonmadval), is based in the code of than
 Laravel WuBook was created by, and is maintained by [Filippo Galante](https://github.com/ilgala), and is a [WuBook Wired API](http://tdocs.wubook.net/wired.html) bridge for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/ilgala/laravel-wubook/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md). In order to use the API you have to request a provider key by sending an E-Mail at devel@wubook.net, in order to connect your WuBook account, and you'll be free to try all its features. 
+
+This version is compatible with laravel 5.5.* and 5.6*
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -18,7 +20,7 @@ Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
 To get the latest version of Laravel WuBook, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require ilgala/laravel-wubook
+$ composer require jonmadval/laravel-wubook
 ```
 
 Instead, you may of course manually update your require block and run `composer update` if you so choose:
@@ -26,7 +28,7 @@ Instead, you may of course manually update your require block and run `composer 
 ```json
 {
     "require": {
-        "IlGala/laravel-wubook": "0.1.0-alpha"
+        "jonmadval/laravel-wubook": "v1.0-dev"
     }
 }
 ```
