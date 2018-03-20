@@ -1,5 +1,5 @@
 {
-    "name": "ilgala/laravel-wubook",
+    "name": "jonmadval/laravel-wubook",
     "type": "library",
     "description": "A WuBook bridge for Laravel 5.x http://wubook.net",
     "keywords": [
@@ -19,9 +19,9 @@
         }
     ],
     "require": {
-        "php": "~5.6|~7.0",
-        "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
-        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+        "php": "~5.6|~7.0|~7.2",
+        "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.6.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.6.*",
         "lstrojny/fxmlrpc": "~0.13.0|~0.14.0",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.5",
