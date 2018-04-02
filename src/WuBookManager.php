@@ -15,6 +15,8 @@ use fXmlRpc\Client;
 use fXmlRpc\Parser\NativeParser;
 use fXmlRpc\Serializer\NativeSerializer;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Cache\Repository as Cache;
+use jonmadval\LaravelWubook\Api\WuBookCorporateFunctions;
 use jonmadval\LaravelWubook\Exceptions\WuBookException;
 use jonmadval\LaravelWubook\Api\WuBookAuth;
 use jonmadval\LaravelWubook\Api\WuBookAvailability;
@@ -60,10 +62,10 @@ class WuBookManager
     public function __construct(Repository $config)
     {
         // Setup credentials
-        $this->config = array_only($config->get('wubook'), ['username', 'password', 'provider_key', 'lcode']);
+        $this->config = array_only($config->get('wubook'), ['username', 'password', 'provider_key', 'lcode','cache_token']);
 
         // Credentials check
-        if (!array_key_exists('username', $this->config) || !array_key_exists('password', $this->config) || !array_key_exists('provider_key', $this->config) || !array_key_exists('lcode', $this->lcode)) {
+        if (!array_key_exists('username', $this->config) || !array_key_exists('password', $this->config) || !array_key_exists('provider_key', $this->config) || !array_key_exists('lcode', $this->config)) {
             throw new WuBookException('Credentials are required!');
         }
 
@@ -73,6 +75,7 @@ class WuBookManager
 
         // Utilities
         $this->cache = app()['cache'];
+
     }
 
     /**
@@ -140,7 +143,7 @@ class WuBookManager
         // Setup client
         $client = new Client(self::ENDPOINT, null, new NativeParser(), new NativeSerializer());
 
-        return new WuBookCorporate($this->config, $this->cache, $client, $token);
+        return new WuBookCorporateFunctions($this->config, $this->cache, $client, $token);
     }
 
     /**
@@ -265,5 +268,19 @@ class WuBookManager
     public function get_client()
     {
         return $this->client;
+    }
+
+    public function set_lcode($lcode)
+    {
+        $this->config['lcode'] = $lcode;
+        return $this->config;
+    }
+
+    public function setConfig( $data )
+    {
+        $this->config['username'] = $data['wubookuser'];
+        $this->config['password'] = $data['password'];
+        $this->config['lcode'] = $data['lcode'];
+        return $this->config;
     }
 }

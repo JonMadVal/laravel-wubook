@@ -65,7 +65,7 @@ class WuBookReservations extends WuBookApi
      * @param int $mark
      * @return mixed
      */
-    public function fetch_new_bookings($ancillary = 0, $mark = 1)
+    public function fetch_new_bookings($ancillary = 1, $mark = 1)
     {
         return $this->call_method($this->token, 'fetch_new_bookings', [$ancillary, $mark]);
     }

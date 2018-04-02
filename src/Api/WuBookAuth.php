@@ -13,8 +13,9 @@ namespace jonmadval\LaravelWubook\Api;
 
 use fXmlRpc\Client;
 use fXmlRpc\Exception\AbstractTransportException;
-use jonmadval\WuBook\Exceptions\WuBookException;
+use jonmadval\LaravelWuBook\Exceptions\WuBookException;
 use Carbon\Carbon;
+use Illuminate\Cache\Repository;
 
 /**
  * This is the WuBook authentication class.
@@ -46,7 +47,7 @@ class WuBookAuth
      * @param \Illuminate\Cache\Repository $cache
      * @param Client $client
      */
-    public function __construct(array $config, Illuminate\Cache\Repository $cache, Client $client)
+    public function __construct(array $config,  $cache, Client $client)
     {
         $this->config = $config;
         $this->client = $client;
