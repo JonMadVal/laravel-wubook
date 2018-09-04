@@ -41,7 +41,7 @@ class WuBookManager
     /**
      * @var string
      */
-    const ENDPOINT = 'https://wubook.net/xrws/';
+    const ENDPOINT = 'https://wired.wubook.net/xrws/';
 
     /**
      * @var array
