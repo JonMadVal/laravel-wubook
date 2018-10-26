@@ -47,6 +47,16 @@ class WuBookChannelManager extends WuBookApi
     }
 
     /**
+     * http://tdocs.wubook.net/wired/woodoo.html#get_channel_symbols
+     *
+     * @return mixed
+     */
+    public function get_channel_info()
+    {
+        return $this->call_method($this->token, 'get_channel_info', [], ['token' => $this->get_token($this->token)]);
+    }
+
+    /**
      * http://tdocs.wubook.net/wired/woodoo.html#get_otas
      *
      * @return mixed
