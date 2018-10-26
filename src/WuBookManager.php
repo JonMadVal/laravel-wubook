@@ -278,10 +278,14 @@ class WuBookManager
 
     public function setConfig( $data )
     {
-        $this->config['username'] = $data['wubookuser'];
+        if(isset($data['password'])){
+            $this->config['username'] = $data['wubookuser'];
+        }
+
         if(isset($data['password'])){
             $this->config['password'] = $data['password'];
         }
+
         $this->config['lcode'] = $data['lcode'];
         return $this->config;
     }
