@@ -51,9 +51,9 @@ class WuBookChannelManager extends WuBookApi
      *
      * @return mixed
      */
-    public function get_channel_info()
+    public function get_channels_info()
     {
-        return $this->call_method($this->token, 'get_channel_info', [], ['token' => $this->get_token($this->token)]);
+        return $this->call_method($this->token, 'get_channels_info', [], ['token' => $this->get_token($this->token)]);
     }
 
     /**
