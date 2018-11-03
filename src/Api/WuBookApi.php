@@ -133,10 +133,19 @@ abstract class WuBookApi
             // Retrieve response
             $response = $this->client->call($method, $data);
 
-            return [
-                'has_error' => $response[0] != 0,
-                'data' => $response[1]
-            ];
+            if (count($response) == 2) {
+                return [
+                    'has_error' => $response[0] != 0,
+                    'data' => $response[1]
+                ];
+            }else{
+                $aux = $reponse;
+                $response = [
+                    'has_error' => false,
+                    'data'  => $aux
+                ];
+                return $response;
+            }
         } catch (AbstractTransportException $error) {
             throw new WuBookException($error->getMessage(), $error->getCode(), $error);
         } finally {
