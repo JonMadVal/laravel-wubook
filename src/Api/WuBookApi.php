@@ -139,7 +139,7 @@ abstract class WuBookApi
                     'data' => $response[1]
                 ];
             }else{
-                $aux = $reponse;
+                $aux = $response;
                 $response = [
                     'has_error' => false,
                     'data'  => $aux
